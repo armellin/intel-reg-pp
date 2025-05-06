@@ -127,10 +127,25 @@ function MSR_OUTPUT__displayAsTable()
   # Trigger the msr driver to load explicitly
   sudo modprobe msr
 
-  printf "+----+------------------------------+---------+----------+----------+----------+----------+\n"
-  printf "| % 2s | % -28s | %s | %08s | % 8s | % 8s | % 8s |\n" "#" "MSR Register" "Address" \
-         "Core 0" "Core 1" "Core 2" "Core 3"
-  printf "+----+------------------------------+---------+----------+----------+----------+----------+\n"
+  printf "%s" "+----+------------------------------+---------+"
+  for (( index=0; index < l_var_core_count; index++))
+  do
+      printf "%s" "----------------+"
+  done
+  printf "\n"
+  printf "| % 2s | % -28s | %s |" "#" "MSR Register" "Address"
+  for (( index=0; index < l_var_core_count; index++))
+  do
+       printf " % 13s%d |" "Core " $index
+  done
+  printf "\n"
+
+  printf "%s" "+----+------------------------------+---------+"
+  for (( index=0; index < l_var_core_count; index++))
+  do
+      printf "%s" "----------------+"
+  done
+  printf "\n"
 
   l_var_num=0
 
@@ -148,13 +163,18 @@ function MSR_OUTPUT__displayAsTable()
           l_var_reg_val="N/A"
         fi
 
-        printf " % 8s |" "${l_var_reg_val}"
+        printf " % 14s |" "${l_var_reg_val}"
       done
 
       ((l_var_num++))
       printf "\n"
   done
-  printf "+----+------------------------------+---------+----------+----------+----------+----------+\n"
+  printf "%s" "+----+------------------------------+---------+"
+  for (( index=0; index < l_var_core_count; index++))
+  do
+      printf "%s" "----------------+"
+  done
+  printf "\n"
 
   ((l_var_num=1))
   ((l_var_num_mod=0))
