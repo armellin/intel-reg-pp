@@ -14,6 +14,7 @@ declare -a g_arr_MsrName=(\
 'IA32_PACKAGE_THERM_MARGIN' \
 'IA32_TEMPERATURE_TARGET' \
 'IA32_PKG_THERM_STATUS' \
+'MSR_PKG_POWER_LIMIT' \
 'MSR_PKG_ENERGY_STATUS' \
 'MSR_PKG_STATUS' \
 'MSR_PPERF' \
@@ -36,10 +37,11 @@ declare -a g_arr_MsrAddr=(\
 '0x1A1' \
 '0x1A2' \
 '0x1B1' \
+'0x610' \
 '0x611' \
 '0x613' \
 '0x64E' \
-'0x690' \
+'0x64F' \
 '0x770' \
 '0x771' \
 '0x772' \

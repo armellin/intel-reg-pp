@@ -12,10 +12,12 @@ extern "C" {
     void REG_PRINT_DE__printIA32PackageThermMargin(unsigned long long ullVal);
     void REG_PRINT_DE__printIA32TermperatureTarget(unsigned long long ullVal);
     void REG_PRINT_DE__print_IA32_PKG_THERM_STATUS(unsigned long long ullVal);
+    void REG_PRINT_DE__print_MSR_PKG_POWER_LIMIT(unsigned long long ullVal);
     void REG_PRINT_DE__print_MSR_PKG_ENERGY_STATUS(unsigned long long ullVal);
     void REG_PRINT_DE__print_IA32_PKG_THERM_STATUS(unsigned long long ullVal);
     void REG_PRINT_DE__print_MSR_PKG_STATUS(unsigned long long ullVal);
     void REG_PRINT_DE__printMsrCorePerfLimitReasons(unsigned long long ullVal);
+    void REG_PRINT_DE__printMsrCorePerfLimitReasons64f(unsigned long long ullVal);
 
 #ifdef __cplusplus
 }
